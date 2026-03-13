@@ -30,186 +30,6 @@ if ($plan_name == "Essential Security") {
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="shortcut icon" href="/images/Education-42-512.webp" type="image/x-icon">
-    <style>
-        .cart-container {
-            max-width: 900px;
-            margin: 50px auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 30px;
-            padding: 20px;
-        }
-
-        .cart-section {
-            background: var(--card-background);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .cart-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .cart-header i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .cart-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .item-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-color);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-
-        .item-details h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.2rem;
-        }
-
-        .item-details p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin: 0;
-        }
-
-        .billing-info {
-            margin-top: 30px;
-        }
-
-        .info-group {
-            margin-bottom: 15px;
-        }
-
-        .info-label {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .info-value {
-            font-weight: 500;
-        }
-
-        .summary-card {
-            background: var(--card-background);
-            border-radius: 20px;
-            padding: 30px;
-            height: fit-content;
-            position: sticky;
-            top: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .summary-title {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .total-row {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 20px;
-            padding-top: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .payment-methods {
-            margin-top: 25px;
-        }
-
-        .method-option {
-            display: block;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-
-        .method-option input {
-            display: none;
-        }
-
-        .method-box {
-            padding: 15px;
-            border: 2px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .method-option input:checked + .method-box {
-            border-color: var(--primary-color);
-            background: rgba(37, 99, 235, 0.1);
-        }
-
-        .confirm-btn {
-            width: 100% !important;
-            margin-top: 25px;
-            background: var(--primary-color) !important;
-            color: white !important;
-            border: none;
-            padding: 16px !important;
-            border-radius: 12px !important;
-            font-weight: 600 !important;
-            font-size: 1rem !important;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-        }
-
-        .confirm-btn:hover {
-            background: var(--secondary-color) !important;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            .cart-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Clean up global form overrides */
-        .summary-card form {
-            width: 100%;
-            background: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -247,7 +67,6 @@ if ($plan_name == "Essential Security") {
 
                 <div class="billing-info">
                     <h3>Billing Information</h3>
-                    <br>
                     <div class="info-group">
                         <div class="info-label">Company Name</div>
                         <div class="info-value"><?php echo htmlspecialchars($sub['company_name']); ?></div>
@@ -270,11 +89,11 @@ if ($plan_name == "Essential Security") {
                 
                 <div class="summary-row">
                     <span>Plan Subtotal</span>
-                    <span><?php echo $price; ?></span>
+                    <span style="color: var(--text-primary);"><?php echo $price; ?></span>
                 </div>
                 <div class="summary-row">
                     <span>Tax</span>
-                    <span>$0.00</span>
+                    <span style="color: var(--text-primary);">$0.00</span>
                 </div>
                 
                 <div class="summary-row total-row">
@@ -282,14 +101,14 @@ if ($plan_name == "Essential Security") {
                     <span style="color: var(--primary-color);"><?php echo $price; ?></span>
                 </div>
 
-                <form action="payment_process.php" method="POST">
+                <form action="payment_process.php" method="POST" class="auth-form" style="background: transparent; width: 100%; padding: 0;">
                     <div class="payment-methods">
-                        <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-secondary);">Select Payment Method</p>
+                        <p style="font-size: 0.9rem; margin: 25px 0 15px; color: var(--text-secondary);">Select Payment Method</p>
                         
                         <label class="method-option">
                             <input type="radio" name="payment_method" value="Visa" required>
                             <div class="method-box">
-                                <i class="fab fa-cc-visa" style="color: #f79e1b;"></i>
+                                <i class="fab fa-cc-visa" style="color: #f79e1b; font-size: 1.5rem;"></i>
                                 <span>Visa / Mastercard</span>
                             </div>
                         </label>
@@ -297,13 +116,13 @@ if ($plan_name == "Essential Security") {
                         <label class="method-option">
                             <input type="radio" name="payment_method" value="PayPal" required>
                             <div class="method-box">
-                                <i class="fab fa-paypal" style="color: #003087;"></i>
+                                <i class="fab fa-paypal" style="color: #003087; font-size: 1.5rem;"></i>
                                 <span>PayPal</span>
                             </div>
                         </label>
                     </div>
 
-                    <button type="submit" class="confirm-btn">
+                    <button type="submit" class="auth-btn">
                         Complete Order <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
                     </button>
                 </form>
@@ -311,8 +130,46 @@ if ($plan_name == "Essential Security") {
         </div>
     </main>
 
-    <footer class="footer">
-        <p>&copy; copyrights reserved 2024</p>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 style="background: linear-gradient(135deg, #fff 0%, var(--primary-color) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Proton</h3>
+                <p>Expert cybersecurity solutions designed to protect your digital assets in an ever-evolving threat landscape.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contactus.html">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="ess.html">Web Pentesting</a></li>
+                    <li><a href="pro.html">Mobile Protection</a></li>
+                    <li><a href="all.html">Enterprise Defense</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> security@proton.io</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Silicon Valley, CA</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Proton Cybersecurity. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

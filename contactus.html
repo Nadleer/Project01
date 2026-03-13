@@ -26,17 +26,100 @@
         <a class="test" href="/proton/contactus.html"><button>Contact</button></a>
     </header>
 
-    <h1 style="text-align: center; padding: 30px;">Contact us</h1>
+    <main>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p style="margin-bottom: 40px; color: var(--text-secondary);">Ready to secure your future? Our elite team is standing by to help you defend against modern threats.</p>
+                
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>security@proton.io</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Visit Us</h4>
+                        <p>Silicon Valley, CA, USA</p>
+                    </div>
+                </div>
+            </div>
 
-    <form class="signup" action="contact_process.php" method="POST">
-        <input type="text" name="company_name" placeholder="Company's name" required>
-        <input type="email" name="company_email" placeholder="Company's email" required>
-        <textarea name="message" placeholder="What do you want to ask about?" required></textarea><br>
-        <input type="submit" value="Submit">
-    </form>
+            <div class="contact-form-container">
+                <h2>Send Message</h2>
+                <form class="auth-form" action="contact_process.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company_name">Company Name</label>
+                            <input type="text" id="company_name" name="company_name" placeholder="Proton Corp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company_email">Email Address</label>
+                            <input type="email" id="company_email" name="company_email" placeholder="name@company.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" style="width: 100%; min-height: 150px; padding: 1rem; border-radius: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(15, 23, 42, 0.6); color: white; resize: vertical;" placeholder="How can we help secure your company?" required></textarea>
+                    </div>
+                    <button type="submit" class="auth-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
 
-    <footer class="footer">
-        <p>&copy; copyrights reserved 2024</p>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 style="background: linear-gradient(135deg, #fff 0%, var(--primary-color) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Proton</h3>
+                <p>Expert cybersecurity solutions designed to protect your digital assets in an ever-evolving threat landscape.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contactus.html">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="ess.html">Web Pentesting</a></li>
+                    <li><a href="pro.html">Mobile Protection</a></li>
+                    <li><a href="all.html">Enterprise Defense</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> security@proton.io</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Silicon Valley, CA</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Proton Cybersecurity. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
     </footer>
 </body>
 
